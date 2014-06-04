@@ -8,6 +8,5 @@ gemfile:
   - gemfiles/Sinatra1.3
   - gemfiles/Sinatra1.4
 
-addons:
-  services:
-    - mongodb
+services:
+  - mongodb
