@@ -5,7 +5,7 @@ OAuth 2.0 Authorization Server as a Rack module. Because you don't allow strange
 
 rack-oauth2-server currently implements version 10 of the OAuth 2.0 spec [http://tools.ietf.org/html/draft-ietf-oauth-v2-10](http://tools.ietf.org/html/draft-ietf-oauth-v2-10).
 
-[![Build Status](https://secure.travis-ci.org/assaf/rack-oauth2-server.png?branch=master)](http://travis-ci.org/assaf/rack-oauth2-server)
+[![Build Status](https://secure.travis-ci.org/BanzaiMan/rack-oauth2-server.png?branch=master)](http://travis-ci.org/BanzaiMan/rack-oauth2-server)
 
 For more background, [check out the presentation slides](http://speakerdeck.com/u/assaf/p/oauth-20).
 
@@ -405,13 +405,13 @@ $ ./script/console
    :public_key => "-----BEGIN RSA PUBLIC KEY-----\n....\n...=\n-----END RSA PUBLIC KEY-----\n")
 ```
 
-When you call `register_issuer` it either registers a new issuer with these specific values, or if an issuer already exists with the given 
+When you call `register_issuer` it either registers a new issuer with these specific values, or if an issuer already exists with the given
 identifier it will update it's properties.
 
-Depending on the algorithm used for signing the assertion (HMAC SHA or RSA), you pass either `:hmac_secret` or `:public_key` to `Rack::OAuth2::Server.register_issuer` 
+Depending on the algorithm used for signing the assertion (HMAC SHA or RSA), you pass either `:hmac_secret` or `:public_key` to `Rack::OAuth2::Server.register_issuer`
 (or both if you will use both with a single issuer). The value of `:public_key` can be either a PEM or DER encoded public key (as supported by `OpenSSL::PKey::RSA.new`).
 
-Rack::OAuth2::Server validates that the issuer (`iss`), principal (`prn`), audience (`aud`) and expiration (`exp`) claims are present. It also validates that the expiration 
+Rack::OAuth2::Server validates that the issuer (`iss`), principal (`prn`), audience (`aud`) and expiration (`exp`) claims are present. It also validates that the expiration
 claim has not passed (with a 10 minute padding added to account for server clock skew).
 
 
