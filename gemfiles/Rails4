@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 gemspec :path=>"../"
 
 gem "rails", "~>4.0"
@@ -10,6 +10,7 @@ group :development do
 end
 
 group :test do
+  gem 'minitest'
   gem "awesome_print"
   gem "rack-test"
   gem "shoulda"
