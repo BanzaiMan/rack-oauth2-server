@@ -1,6 +1,13 @@
+language: ruby
+
 rvm:
   - 1.9.3
+
 gemfile:
   - gemfiles/Rails3
   - gemfiles/Sinatra1.3
   - gemfiles/Sinatra1.4
+
+addons:
+  services:
+    - mongodb
