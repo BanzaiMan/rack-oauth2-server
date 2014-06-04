@@ -3,3 +3,4 @@ rvm:
 gemfile:
   - gemfiles/Rails3
   - gemfiles/Sinatra1.3
+  - gemfiles/Sinatra1.4
